@@ -1928,7 +1928,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl).then(function (res) {
         _this.posts = res.data;
-        console.log(_this.posts);
       });
     }
   }
@@ -1955,8 +1954,9 @@ var render = function render() {
     staticClass: "container"
   }, [_c("ul", _vm._l(_vm.posts, function (post) {
     return _c("li", {
-      key: post.id
-    }, [_c("h3", [_vm._v(_vm._s(post.title))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(post.content))])]);
+      key: post.id,
+      staticClass: "pt-5"
+    }, [_c("h3", [_vm._v(" Titolo: " + _vm._s(post.title))]), _vm._v(" "), _c("p", [_vm._v(" Contenuto :" + _vm._s(post.content))]), _vm._v(" "), _c("h4", [_vm._v(" Categoria :" + _vm._s(post.category.name))])]);
   }), 0)])]);
 };
 

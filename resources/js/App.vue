@@ -4,12 +4,15 @@
 
         <ul>
             <li
+            class="pt-5"
             v-for="post in posts"
             :key="post.id"
             >
-                <h3>{{ post.title }}</h3>
+                <h3> Titolo: {{ post.title }}</h3>
+                <p> Contenuto :{{ post.content }}</p>
+                <h4> Categoria :{{ post.category.name }}</h4>
 
-                <p>{{ post.content }}</p>
+
             </li>
         </ul>
 
@@ -42,7 +45,7 @@ export default {
             axios.get(this.apiUrl)
             .then(res =>{
                 this.posts = res.data;
-                console.log(this.posts);
+
             })
         }
     }
